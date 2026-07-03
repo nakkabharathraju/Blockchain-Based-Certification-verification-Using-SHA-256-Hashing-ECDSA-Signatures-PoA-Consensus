@@ -1,0 +1,432 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.logo h1 {
+  color: white;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.subtitle {
+  background: rgba(255,255,255,0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.wallet-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.account-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge.registered {
+  background: rgba(34,197,94,0.2);
+  color: #22c55e;
+}
+
+.status-badge.pending {
+  background: rgba(245,158,11,0.2);
+  color: #f59e0b;
+}
+
+.account {
+  color: rgba(255,255,255,0.9);
+  font-family: 'Monaco', monospace;
+  font-size: 14px;
+}
+
+.connect-text {
+  color: rgba(255,255,255,0.7);
+}
+
+.connect-btn, .primary-btn, .verify-btn {
+  background: rgba(255,255,255,0.95);
+  color: #4f46e5;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.connect-btn:hover, .primary-btn:hover, .verify-btn:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255,255,255,0.3);
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.issue-card, .verify-card {
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.card-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.card-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.step {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #6b7280;
+  transition: all 0.3s ease;
+}
+
+.step.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+}
+
+.form-container {
+  margin-bottom: 30px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-input {
+  padding: 16px 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: #fafbfc;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+/* ✅ FIXED FILE INPUT - WORKING 100% */
+input[type="file"] {
+  padding: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fafbfc;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  display: block;
+}
+
+input[type="file"]:hover {
+  border-color: #667eea;
+  background: white;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  background: linear-gradient(135deg, #667eea, #764ba2) !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  margin-right: 10px;
+}
+
+input[type="file"]::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.action-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.step-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.primary-btn, .verify-btn {
+  padding: 16px 32px;
+  font-size: 16px;
+}
+
+.secondary-btn, .scan-btn, .stop-scan-btn, .download-btn, .clear-btn {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondary-btn:hover, .scan-btn:hover {
+  background: #e5e7eb;
+  transform: translateY(-1px);
+}
+
+.scan-btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.qr-scanner-section {
+  margin-bottom: 30px;
+}
+
+.scanner-container {
+  position: relative;
+  height: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 3px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.scanner-container.active {
+  border-color: #10b981;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+.stop-scan-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+}
+
+.scanner-controls {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.scanner-controls p {
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+.qr-section {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-radius: 16px;
+  border: 2px solid #bbf7d0;
+}
+
+.qr-code-container {
+  margin: 20px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.qr-info {
+  color: #047857;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.result-message, .verification-result {
+  padding: 20px;
+  border-radius: 16px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.result-message.success, .verification-result.valid {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  color: #166534;
+  border: 2px solid #22c55e;
+}
+
+.result-message.error, .verification-result.invalid {
+  background: linear-gradient(135deg, #fef2f2, #fecaca);
+  color: #991b1b;
+  border: 2px solid #ef4444;
+}
+
+.result-icon {
+  font-size: 32px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 30px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .issue-card, .verify-card {
+    padding: 25px;
+  }
+}
+/* ✅ AUTO-VERIFY BUTTON STYLES */
+.auto-verify-btn {
+  background: linear-gradient(45deg, #10b981, #059669) !important;
+  color: white !important;
+  border: none !important;
+  padding: 14px 28px !important;
+  border-radius: 12px !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  margin: 10px 5px !important;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.auto-verify-btn:hover {
+  background: linear-gradient(45deg, #059669, #047857) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4) !important;
+}
+
+.auto-verify-btn:active {
+  transform: translateY(0) !important;
+}
+
+/* QR Section improvements */
+.qr-section {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  border-radius: 16px;
+  margin-top: 20px;
+}
+
+.qr-code-container {
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin: 15px 0;
+}
